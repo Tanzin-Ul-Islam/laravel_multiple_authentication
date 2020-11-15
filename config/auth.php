@@ -57,6 +57,17 @@ return [
             'provider' => 'admins',
             'hash' => false,
         ],
+
+        'employee'=>[
+            'driver'=>'session',
+            'provider'=>'employees'
+        ],
+
+        'employee-api'=>[
+            'driver'=>'token',
+            'provider'=>'employees',
+            'hash'=>false,
+        ],
     ],
 
     /*
@@ -85,6 +96,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Employee::class,
         ],
 
         // 'users' => [
